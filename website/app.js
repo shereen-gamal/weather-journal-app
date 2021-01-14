@@ -20,7 +20,12 @@ const getData = async () => {
 
     try{
         const res = await req.json();
-        console.log (res);
+        if(res['cod']== 400){
+            alert(res['message']);
+        }
+        else{
+            console.log (res);
+        }
         return res;
     }
     catch(error){
